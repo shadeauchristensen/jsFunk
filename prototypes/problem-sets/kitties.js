@@ -21,7 +21,22 @@ e.g.
 
 Annotate:
   After you find a solution, write out the steps of that solution.  Break them down as much as possible. 
-*/
+
+1. first we made and array with kitty.filter
+2. mapped over array and turned into a name to return for final result
+// */
+
+// function orangeKittyNames () {
+//     const orangeKitties = kitties.filter((kitty) => {
+//       return kitty.color === 'orange'
+//     })
+//     const orangeNames = orangeKitties.map((orangeKitty) => {
+//       return orangeKitty.name
+//     })
+//     return orangeNames
+// }
+
+// console.log(orangeKittyNames())
 
 
 /*
@@ -54,8 +69,17 @@ e.g.
 
 Annotation:
   After you find a solution, write out the steps of that solution.  Break them down as much as possible. 
+1. sorted the array of kitties
+2. using `.sort()` i used that to use oldest and youngest as parameters and used those to return the array in order of oldest to youngest
 */
 
+// function sortByAge () {
+//   return kitties.sort((oldest, youngest) => {
+//     return youngest.age - oldest.age
+//   })
+  
+// }
+// console.log(sortByAge())
 
 /*
 Level 3
@@ -82,8 +106,20 @@ e.g.
 
 Annotation:
   After you find a solution, write out the steps of that solution.  Break them down as much as possible. 
+
+1. Used the `growUp` function to return a new array with updated ages.
+2. Used `.map()` to create a new array where each kitty's age is increased by 2 years.
+
 */
   
+// function growUp () {
+//   return kitties.map((kitty) => {
+//     kitty.age += 2
+//     return kitty
+//   })
+// }
+// console.log(growUp())
+
 
 /*
 Level 4
@@ -134,8 +170,43 @@ e.g.
 
 Annotation:
   Jot down any takeaways, questions, or reflections about this refactoring.
+  	1.	I refactored the functions to accept a parameter, allowing them to work with any dataset passed during invocation.
+	  2.	The only place where I specify the dataset is in the console.log() calls, making the function reusable and data-independent.
+    3. 	I used .map() to extract the name property from each pet color object.
 */
 
+function findOrangeNames(pets) {
+    const orangePets = pets.filter((pet) => {
+      return pet.color === 'orange';
+    });
+    const orangeNames = orangePets.map((orangePet) => {
+      return orangePet.name;
+    });
+    return orangeNames.sort((a, b) => b.localeCompare(a));
+};
+
+function sortByAge(pets) {
+  return pets.sort((a, b) => b.age - a.age);
+};
+
+
+function growUp(pets) {
+  return pets.map((pet) => {
+    return { ...pet, age: pet.age + 2 };
+  });
+}
+
+console.log("Color Orange: ", findOrangeNames(kitties));
+console.log("Color Orange: ", findOrangeNames(puppers));
+console.log('Sorted, Oldest to Youngest: ', sortByAge(kitties));
+console.log('Sorted, Oldest to Youngest: ', sortByAge(puppers));
+console.log("Awh, They've grown up! These pets are now: ", growUp(kitties));
+console.log("Awh, They've grown up! These pets are now: ", growUp(puppers));
+
+
+// console.log(findOrangeNames(pet))
+// console.log(sortByAge(pet))
+// console.log(growUp(pet))
 
 /*
 Level 5
@@ -150,13 +221,14 @@ Annotation:
   If your tests did not immediately pass, take notes on what details you missed while building and checking your solutions. 
   Take notes on the error messages that led you to fixing those details. 
 */
+ 
+// line:185 (I had to refactor with localeCompare), this is a built in method in JS that compares two strings it can take into account language in order to determine order of strings
+
+// line:195 I applied the spread operator { ...pet } in growUp() to return new pet objects without changing the original ones. These changes fixed data mutation issues, ensuring that test expectations remain consistent.
 
 
-
-
-
-// module.exports = {
-//   findOrangeNames,
-//   sortByAge,
-//   growUp
-// };
+module.exports = {
+  findOrangeNames,
+  sortByAge,
+  growUp
+};
