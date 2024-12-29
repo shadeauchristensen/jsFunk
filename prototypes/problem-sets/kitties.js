@@ -223,7 +223,6 @@ Annotation:
 */
  
 // line:185 (I had to refactor with localeCompare), this is a built in method in JS that compares two strings it can take into account language in order to determine order of strings
-
 // line:195 I applied the spread operator { ...pet } in growUp() to return new pet objects without changing the original ones. These changes fixed data mutation issues, ensuring that test expectations remain consistent.
 
 

@@ -59,7 +59,7 @@ If you'd like to keep track of your progress, feel free to use the checklist bel
 ### Single Data Sets
 - [ x ] kitties
 - [ x ] puppers
-- [ ] club
+- [ x ] club
 - [ ] student
 - [ ] task
 - [ ] crafting
