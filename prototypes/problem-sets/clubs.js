@@ -27,27 +27,26 @@ e.g.
 Annotate:
   After you find a solution, write out the steps of that solution.  Break them down as much as possible. 
 
-  // Step 1: Initialize an empty object to store the result
-    // This object will eventually have people's names as keys 
-    // and arrays of club name values.
+  // • Step 1: I͟n͟i͟t͟i͟a͟l͟i͟z͟e an empty object to store the result
+            // This object will eventually have people's names as keys 
+            // and arrays of club name values.
 
-  // Step 2: Loop through each club in the provided clubs array
-    // Each club is an object with a `club` name and a `members` array.
-    // Example of `club`: { club: 'Drama', members: ['Louisa', 'Pam', 'Nathaniel'] }
+  // • Step 2: L͟o͟o͟p through each club in the provided clubs array
+            // Each club is an object with a `club` name and a `members` array.
+            // Example of `club`: { club: 'Drama', members: ['Louisa', 'Pam', 'Nathaniel'] }
 
-  // Step 3: Loop through each member of the current club
-    club.members.forEach((member) => {
+  // • Step 3: L͟o͟o͟p through each member of the current club
+               club.members.forEach((member) => {
 
-  // Step 4: Check if the member already exists in the members object
-      if (!members[member]) {
-  // If the member doesn't exist, initialize them with an empty array
-        members[member] = [];
+  // • Step 4: Check if the member already exists in the members object
+                if (!members[member]) {
+            // If the member doesn't exist, initialize them with an empty array
+                      members[member] = [];
 
-  // Step 5: Add the current club's name to the member's array of clubs
+  // • Step 5: Add the current club's name to the member's array of clubs
 
-  // Step 6: Return the completed members object
-    // object now maps each member to an array of club names they belong to
-
+  // • Step 6: R͟e͟t͟u͟r͟n the completed members object
+            //  object now maps each member to an array of club names they belong to
 
 */
 // console.log(clubs);    console.log(members);    console.log(club);
