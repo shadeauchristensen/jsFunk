@@ -26,7 +26,22 @@ e.g.
 
 Annotate:
   After you find a solution, write out the steps of that solution.  Break them down as much as possible. 
+
+⁡⁣⁣⁢•	I started by writing a function called getSupplyList that takes in craftName as an argument.
+•	I created a craft variable by accessing the craftSupplies object using the craftName key to retrieve the specific array of supplies for that craft.
+•	I used .map() on the craft array to create a new array containing only the names of the supplies.
+•	In the .map() callback, I used project as the parameter to represent each supply object, and I accessed the name property to store each supply name in the new array.
+•	Finally, I logged the expected results to confirm the output matched what I was expecting. ⁡
+
 */
+
+function getSupplyList(craftName) {
+  const craft = craftSupplies[craftName]
+  return craft ? craft.map((project) => project.name) : [] 
+}
+
+console.log(getSupplyList("crossStitching"))
+console.log(getSupplyList("crocheting"))
 
 
 /*
@@ -54,8 +69,23 @@ e.g.
 
 Annotation:
   After you find a solution, write out the steps of that solution.  Break them down as much as possible. 
+
+⁡⁣⁣⁢• I created a function called getDetailedList that takes in craftName as an argument.
+• I created a variable called craft and tied it to the craftSupplies object using the craftName key to retrieve the array of supplies for that specific craft.
+• I used the ? (ternary operator) as an edge case to handle scenarios where the craft might not exist. If the craft exists, I used .map() to create a new array.
+• In the .map() callback, I constructed a string that included the amountNeeded and name of each supply. This ensured the output matched the expected format.
+• I used another edge case with amountNeeded > 1 to dynamically add an 's' to the end of plural supply names, or nothing for singular ones.
+• Finally, the resulting array was returned and the output matched the expected results.⁡
+
 */
 
+function getDetailedList(craftName) {
+  const craft = craftSupplies[craftName]
+  return craft ? craft.map((project) => `I need ${project.amountNeeded} ${project.name}${project.amountNeeded > 1 ? 's' : ''}.`) : []
+}
+
+console.log(getDetailedList("weaving"))
+console.log(getDetailedList("crocheting"))
 
 /*
 Level 3
@@ -73,7 +103,7 @@ Annotation:
 
 
 
-// module.exports = {
-//   getSupplyList,
-//   getDetailedList
-// };
+module.exports = {
+  getSupplyList,
+  getDetailedList
+};
