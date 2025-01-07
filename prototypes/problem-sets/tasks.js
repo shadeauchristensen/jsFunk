@@ -111,7 +111,7 @@ Annotation:
 
 function getStatusTimes() {
   const getStatTime = tasks.reduce((acc, task) => {
-    if (!acc[task.status]){
+    if (!acc[task.status]) {
       acc[task.status] = 0
     }
     acc[task.status] += task.minutesNeeded
