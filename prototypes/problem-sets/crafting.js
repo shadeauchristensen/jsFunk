@@ -29,7 +29,7 @@ Annotate:
 
 ⁡⁣⁣⁢•	I started by writing a function called getSupplyList that takes in craftName as an argument.
 •	I created a craft variable by accessing the craftSupplies object using the craftName key to retrieve the specific array of supplies for that craft.
-•	I used .map() on the craft array to create a new array containing only the names of the supplies.
+•	I used .map() on the create craft array and to create a new array containing only the names of the supplies.
 •	In the .map() callback, I used project as the parameter to represent each supply object, and I accessed the name property to store each supply name in the new array.
 •	Finally, I logged the expected results to confirm the output matched what I was expecting. ⁡
 
