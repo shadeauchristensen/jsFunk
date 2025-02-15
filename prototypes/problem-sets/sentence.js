@@ -5,7 +5,14 @@ var sentence = "Potatoes are so unbelievably delicious!";
 console.log('Running sentence.js')
 
 /* Sentence Prompts*/
+// breweries
+// 
 
+
+
+
+
+console.log(countLetters('t'))
 /*
 Level 1
 
@@ -27,7 +34,6 @@ e.g.
 Annotate:
   After you find a solution, write out the steps of that solution.  Break them down as much as possible. 
 */
-
 
 /*
 Level 2
@@ -52,8 +58,24 @@ e.g.
         ' ': 4,
         r: 1,
         u: 2,
-        n: 1,
-        b: 2,
+function findLetterCounts() {
+  const lowerCaseSentence = sentence.toLowerCase();
+  const letterCounts = {};
+  for (let i = 0; i < lowerCaseSentence.length; i++) {
+    const char = lowerCaseSentence[i];
+    if (letterCounts[char]) {
+      letterCounts[char]++;
+    } else {
+      letterCounts[char] = 1;
+    }
+  }
+  return letterCounts;
+}
+
+console.log(findLetterCounts())
+
+/*
+Level 3
         l: 3,
         i: 3,
         v: 1,

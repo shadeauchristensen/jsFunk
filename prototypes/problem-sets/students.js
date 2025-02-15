@@ -35,7 +35,7 @@ function findEnrolledStudents() {
 
   students.forEach(student => {
     if (student.enrolled === true) {
-      enrolled.push(student.name);
+      enrolled.push(student.name)
     }
   });
 

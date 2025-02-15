@@ -63,7 +63,7 @@ If you'd like to keep track of your progress, feel free to use the checklist bel
 - [ x ] student
 - [ x ] task
 - [ x ] crafting
-- [] plants
+- [ x ] plants
 - [ ] sentence
 - [ ] mods
 - [ ] boardGames

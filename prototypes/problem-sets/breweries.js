@@ -4,7 +4,24 @@ const { breweries } = require('../datasets/breweries');
 
 console.log('Running breweries.js')
 
-/* Breweries Prompts*/
+// 1. Write a function called getBeerCount
+// 2. returns total number beer count for each brewery combined (number-type)
+// Goal: to invoke the function returns 40
+// Technique: .map -> 
+
+function getBeerCount() {
+  // console.log(" breweries:" , breweries)
+  let totalBeers = 0;
+
+  breweries.forEach((brewery) => {
+    totalBeers += brewery.beers.length;
+  });
+
+  return totalBeers;
+}
+
+console.log(getBeerCount());
+
 
 /*
 Level 1

@@ -30,14 +30,25 @@ Annotate:
 
 */
 
-function findSpringBloomers() {
-  const result = coloradoPlants.filter(plant => 
-    plant.bloomingSeason.includes("Spring")).length
-  return result
+const seasons = {
+  first: "Spring",
+  second: "Summer"
 }
 
-console.log(findSpringBloomers())
+function findSpringBloomers(season) {
+  // console.log("season: ", season)
+  const result = coloradoPlants.filter(plant => {
+    // console.log("plant: ", plant)
+    // console.log("plantblooimng: ", plant.bloomingSeason )
+    return plant.bloomingSeason.includes(season)
+  })
 
+  return result.length
+}
+const potato = findSpringBloomers(seasons.second)
+console.log("P: " , potato)
+// console.log("findSpringBloomers: ", findSpringBloomers("Summer"))
+// console.log("findSpringBloomers: ", findSpringBloomers("Spring"))
 /*
 Level 2
 
@@ -105,7 +116,7 @@ Annotation:
 	  •	I used a const variable to sum up the heights of all plants in the filteredPlants array.
 
 	6.	I calculated and returned the average height:
-	  •	By dividing the totalHeight by filteredPlants.length, the function dynamically produces the average height for either all plants or the specified habitat.⁡
+	  •	By dividing the totalHeight by filteredPlants.length, the function  produces the average height for either all plants or the specified habitat.⁡
 
 */
 
